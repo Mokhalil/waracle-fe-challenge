@@ -1,6 +1,9 @@
 import React, {Fragment} from 'react';
+import {useHistory} from "react-router";
+import {NavLink} from 'react-router-dom';
 
 const Shell = (props: any) => {
+    const history = useHistory();
     return (
         <Fragment>
 
@@ -14,8 +17,8 @@ const Shell = (props: any) => {
                         </div>
                         <div className="flex-1 mt-6 w-full px-2 space-y-1">
                             {/* Current: "bg-indigo-800 text-white", Default: "text-indigo-100 hover:bg-indigo-800 hover:text-white" */}
-                            <a href="#"
-                               className="text-indigo-100 hover:bg-indigo-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
+                            <NavLink to="/"
+                                     className="text-indigo-100 hover:bg-indigo-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
                                 {/*
       Heroicon name: outline/home
 
@@ -28,53 +31,9 @@ const Shell = (props: any) => {
                                           d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                                 </svg>
                                 <span className="mt-2">Home</span>
-                            </a>
-                            <a href="#"
-                               className="text-indigo-100 hover:bg-indigo-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
-                                {/* Heroicon name: outline/view-grid */}
-                                <svg className="text-indigo-300 group-hover:text-white h-6 w-6"
-                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                          d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
-                                </svg>
-                                <span className="mt-2">All Files</span>
-                            </a>
-                            <a href="#"
-                               className="bg-indigo-800 text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium"
-                               aria-current="page">
-                                {/* Heroicon name: outline/photograph */}
-                                <svg className="text-white h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                                <span className="mt-2">Photos</span>
-                            </a>
-                            <a href="#"
-                               className="text-indigo-100 hover:bg-indigo-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
-                                {/* Heroicon name: outline/user-group */}
-                                <svg className="text-indigo-300 group-hover:text-white h-6 w-6"
-                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                                </svg>
-                                <span className="mt-2">Shared</span>
-                            </a>
-                            <a href="#"
-                               className="text-indigo-100 hover:bg-indigo-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
-                                {/* Heroicon name: outline/collection */}
-                                <svg className="text-indigo-300 group-hover:text-white h-6 w-6"
-                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                                </svg>
-                                <span className="mt-2">Albums</span>
-                            </a>
-                            <a href="#"
-                               className="text-indigo-100 hover:bg-indigo-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
+                            </NavLink>
+                            <NavLink to="/upload"
+                                     className="text-indigo-100 hover:bg-indigo-800 hover:text-white group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium">
                                 {/* Heroicon name: outline/cog */}
                                 <svg className="text-indigo-300 group-hover:text-white h-6 w-6"
                                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -84,8 +43,8 @@ const Shell = (props: any) => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                                           d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
-                                <span className="mt-2">Settings</span>
-                            </a>
+                                <span className="mt-2">Upload</span>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
@@ -121,6 +80,7 @@ const Shell = (props: any) => {
                                 </div>
                                 <div className="ml-2 flex items-center space-x-4 sm:ml-6 sm:space-x-6">
                                     <button type="button"
+                                            onClick={() => history.push('/upload')}
                                             className="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                         {/* Heroicon name: outline/plus */}
                                         <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -138,92 +98,8 @@ const Shell = (props: any) => {
                     <div className="flex-1 flex items-stretch overflow-hidden">
                         <main className="flex-1 overflow-y-auto">
                             <div className="pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <div className="flex">
-                                    <h1 className="flex-1 text-2xl font-bold text-gray-900">Photos</h1>
-                                    <div className="ml-6 bg-gray-100 p-0.5 rounded-lg flex items-center sm:hidden">
-                                        <button type="button"
-                                                className="p-1.5 rounded-md text-gray-400 hover:bg-white hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                            {/* Heroicon name: solid/view-list */}
-                                            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fillRule="evenodd"
-                                                      d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                                      clipRule="evenodd"/>
-                                            </svg>
-                                            <span className="sr-only">Use list view</span>
-                                        </button>
-                                        <button type="button"
-                                                className="ml-0.5 bg-white p-1.5 rounded-md shadow-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                            {/* Heroicon name: solid/view-grid */}
-                                            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path
-                                                    d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
-                                            </svg>
-                                            <span className="sr-only">Use grid view</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                {/* Tabs */}
-                                <div className="mt-3 sm:mt-2">
-                                    <div className="sm:hidden">
-                                        <label htmlFor="tabs" className="sr-only">Select a tab</label>
-                                        <select id="tabs" name="tabs"
-                                                className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                                            <option selected>Recently Viewed</option>
-                                            <option>Recently Added</option>
-                                            <option>Favorited</option>
-                                        </select>
-                                    </div>
-                                    <div className="hidden sm:block">
-                                        <div className="flex items-center border-b border-gray-200">
-                                            <nav className="flex-1 -mb-px flex space-x-6 xl:space-x-8"
-                                                 aria-label="Tabs">
-                                                {/* Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" */}
-                                                <a href="#" aria-current="page"
-                                                   className="border-indigo-500 text-indigo-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                                                    Recently Viewed
-                                                </a>
-                                                <a href="#"
-                                                   className="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                                                    Recently Added
-                                                </a>
-                                                <a href="#"
-                                                   className="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
-                                                    Favorited
-                                                </a>
-                                            </nav>
-                                            <div
-                                                className="hidden ml-6 bg-gray-100 p-0.5 rounded-lg items-center sm:flex">
-                                                <button type="button"
-                                                        className="p-1.5 rounded-md text-gray-400 hover:bg-white hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                                    {/* Heroicon name: solid/view-list */}
-                                                    <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                         viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                        <path fillRule="evenodd"
-                                                              d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                                              clipRule="evenodd"/>
-                                                    </svg>
-                                                    <span className="sr-only">Use list view</span>
-                                                </button>
-                                                <button type="button"
-                                                        className="ml-0.5 bg-white p-1.5 rounded-md shadow-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                                    {/* Heroicon name: solid/view-grid */}
-                                                    <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg"
-                                                         viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                        <path
-                                                            d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
-                                                    </svg>
-                                                    <span className="sr-only">Use grid view</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 {/* Gallery */}
-
                                 {props.children}
-
                             </div>
                         </main>
                     </div>

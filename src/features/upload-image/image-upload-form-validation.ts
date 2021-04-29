@@ -7,9 +7,9 @@ const SUPPORTED_FORMATS = [
     "image/png"
 ];
 export const imageUploadFormSchema = yup.object().shape({
-    file: yup
+    image: yup
         .mixed()
-        .required("A file is required")
+        .required("A cat image is required")
         .test(
             "fileSize",
             "File too large",
