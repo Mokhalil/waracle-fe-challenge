@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import GalleryItem from "./gallery-item";
 import {SaveAsFavouritePayload} from "../../core/models/cat";
+import EmptyGallery from './empty-gallery';
 
 interface GalleryProps{
     items : any[],
@@ -9,7 +10,10 @@ interface GalleryProps{
     onToggleFavourite : (id: string, subId: string)=>void
 }
 
-const Gallery = ({items, onVoteUp, onVoteDown,onToggleFavourite}:GalleryProps) => {
+const Gallery = ({items, onVoteUp, onVoteDown,onToggleFavourite}:GalleryProps) =>
+{
+    if(!items || items.length==0)
+        return <EmptyGallery/>
     return (
         <section className="mt-8 pb-16" aria-labelledby="gallery-heading">
             <h2 id="gallery-heading" className="sr-only">Recently viewed</h2>
