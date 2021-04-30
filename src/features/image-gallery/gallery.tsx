@@ -14,6 +14,7 @@ const Gallery = ({items, onVoteUp, onVoteDown,onToggleFavourite}:GalleryProps) =
 {
     if(!items || items.length==0)
         return <EmptyGallery/>
+
     return (
         <section className="mt-8 pb-16" aria-labelledby="gallery-heading">
             <h2 id="gallery-heading" className="sr-only">Recently viewed</h2>

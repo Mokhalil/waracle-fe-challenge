@@ -13,6 +13,8 @@ const GalleryItem = ({item, onVoteUp, onVoteDown, onToggleFavourite}: GalleryIte
     const negativeScoreStyle = 'ml-4 bg-red-200 font-semibold rounded-full h-6 w-6 flex  items-center justify-center text-red-800 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500'
     const positiveScoreStyle = 'ml-4 bg-green-200 font-semibold rounded-full h-6 w-6 flex  items-center justify-center text-green-800 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500'
 
+    if(!item)
+        return <div>Gallery item cannot be empty</div>
     return (
         <li className="relative">
             <div
