@@ -47,6 +47,7 @@ export default class CatStore {
     }
 
     loadVotes = async () => {
+        this.scoresRegistery.clear()
         const votes: any[] = await agent.Cats.listVotes();
         votes.forEach((vote) => {
             if (this.scoresRegistery.has(vote.image_id)) {
@@ -76,8 +77,14 @@ export default class CatStore {
         await this.loadMyFavourites();
     }
 
-    voteUp = async (id: string) => await agent.Cats.vote({image_id: id, value: 1})
-    voteDown = async (id: string) => await agent.Cats.vote({image_id: id, value: 0})
+    voteUp = async (id: string) => {
+        await agent.Cats.vote({image_id: id, value: 1})
+        await this.loadVotes();
+    }
+    voteDown = async (id: string) => {
+        await agent.Cats.vote({image_id: id, value: 0})
+        await this.loadVotes();
+    }
     isInFavourites = (id: string) => this.favouritesRegistery.has(id);
     getFavouriteId = (id: string) => this.favouritesRegistery.get(id).id;
 }
