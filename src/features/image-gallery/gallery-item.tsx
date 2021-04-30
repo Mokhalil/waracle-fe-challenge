@@ -2,41 +2,35 @@ import React from 'react';
 
 interface GalleryItemProps {
     item: any
-    onVoteUp : (id:string)=>void,
-    onVoteDown : (id:string)=>void,
-    onToggleFavourite : (id: string, subId: string)=>void
+    onVoteUp: (id: string) => void,
+    onVoteDown: (id: string) => void,
+    onToggleFavourite: (id: string, subId: string) => void
 }
 
-const GalleryItem = ({item, onVoteUp, onVoteDown,onToggleFavourite}: GalleryItemProps) => {
+const GalleryItem = ({item, onVoteUp, onVoteDown, onToggleFavourite}: GalleryItemProps) => {
 
-    const score = (item.score)?item.score.up - item.score.down:0;
+    const score = (item.score) ? item.score.up - item.score.down : 0;
     const negativeScoreStyle = 'ml-4 bg-red-200 font-semibold rounded-full h-6 w-6 flex  items-center justify-center text-red-800 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500'
     const positiveScoreStyle = 'ml-4 bg-green-200 font-semibold rounded-full h-6 w-6 flex  items-center justify-center text-green-800 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500'
 
     return (
         <li className="relative">
-            {/* Current: "ring-2 ring-offset-2 ring-indigo-500", Default: "focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500" */}
             <div
                 className="ring-2 ring-offset-2 ring-indigo-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-200 overflow-hidden">
-                {/* Current: "", Default: "group-hover:opacity-75" */}
-                {/* <img src="https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80" alt={''} className="object-cover pointer-events-none" />*/}
                 <img src={`${item.url}`} alt={''} className="object-cover pointer-events-none"/>
-                {/* <button type="button" className="absolute inset-0 focus:outline-none">
-                    <span className="sr-only">View details for IMG_4985.HEIC</span>
-                </button>*/}
+
             </div>
             <div className={'mt-2 flex justify-center'}>
                 <button type="button"
-                        onClick={()=>onToggleFavourite(item.id,item.sub_id)}
+                        onClick={() => onToggleFavourite(item.id, item.sub_id)}
                         className="ml-4 bg-white rounded-full h-6 w-6 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                    {/* Heroicon name: outline/heart */}
                     {
-                        (item.isFavourite)?
+                        (item.isFavourite) ?
                             <svg className="h-6 w-6 text-red-700" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                                       d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                            </svg>:
+                            </svg> :
                             <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -46,11 +40,9 @@ const GalleryItem = ({item, onVoteUp, onVoteDown,onToggleFavourite}: GalleryItem
 
                     <span className="sr-only">Favorite</span>
                 </button>
-
                 <button type="button"
-                        onClick={()=>onVoteUp(item.id)}
+                        onClick={() => onVoteUp(item.id)}
                         className="ml-4 bg-white rounded-full h-6 w-6 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                    {/* Heroicon name: outline/heart */}
 
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
@@ -61,7 +53,7 @@ const GalleryItem = ({item, onVoteUp, onVoteDown,onToggleFavourite}: GalleryItem
                 </button>
 
                 <button type="button"
-                        onClick={()=>onVoteDown(item.id)}
+                        onClick={() => onVoteDown(item.id)}
                         className="ml-4 bg-white rounded-full h-6 w-6 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">

@@ -4,7 +4,6 @@ import CatStore from "./catStore";
 
 interface Store {
     catStore: CatStore;
-
 }
 
 export const store: Store = {

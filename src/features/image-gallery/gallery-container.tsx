@@ -89,6 +89,8 @@ const GalleryContainer = observer(() => {
                     </div>
                 </div>
             </div>
+
+
             <Gallery items={images} onVoteUp={onVoteUp} onVoteDown={onVoteDown} onToggleFavourite={toggleAsFavourite} />
         </Fragment>
     );
