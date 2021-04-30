@@ -1,5 +1,6 @@
 # Waracle Front-end Code test  notes
 
+Solution is deployed to : https://huge-tooth.surge.sh/
 The solution consists of two main folders
 
 * Feature : which contains all the feature screens
