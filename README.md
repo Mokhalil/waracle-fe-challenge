@@ -11,4 +11,6 @@ Core : contains code that will be used across the solution.
 - I've used TailwindCSS to style the application.
 - I've not got round to write unit tests.
 
-
+![Landing page](https://raw.githubusercontent.com/Mokhalil/waracle-fe-challenge/master/Waracle_Coding_Test.png)
+![iphone view](https://raw.githubusercontent.com/Mokhalil/waracle-fe-challenge/master/Sizzy-iPhone%2012%20localhost%2030Apr%2008.27.png)
+![small screen](https://raw.githubusercontent.com/Mokhalil/waracle-fe-challenge/master/Sizzy-Small%20localhost%2030Apr%2008.26.png)
