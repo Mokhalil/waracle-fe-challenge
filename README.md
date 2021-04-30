@@ -9,7 +9,7 @@ Core : contains code that will be used across the solution.
 - The solution is developed using Typescript
 - I've used Formik and Yup for the forms management and validation
 - I've used TailwindCSS to style the application.
-- I've not got round to write unit tests.
+- I would have added unit tests if I've had extra time.
 
 ![Landing page](https://raw.githubusercontent.com/Mokhalil/waracle-fe-challenge/master/Waracle_Coding_Test.png)
 ![iphone view](https://raw.githubusercontent.com/Mokhalil/waracle-fe-challenge/master/Sizzy-iPhone%2012%20localhost%2030Apr%2008.27.png)
