@@ -13,7 +13,7 @@ The solution consists of two main folders
 - The solution is developed using Typescript
 - I used Formik and Yup for the forms management and validation
 - I used TailwindCSS to style the application.
-- I would have added unit tests if I've had extra time.
+- Added unit tests
 - API Key in .env.development wouldn't be checked in the code repo normally, but just added it for ease running it for people evaluating the test.
 - The Cat API requires sometime to start counting the sent votes for newly added images. This means that for -new images only- won't have a score. 
 
