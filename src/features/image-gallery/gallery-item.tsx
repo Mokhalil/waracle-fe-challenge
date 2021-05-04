@@ -19,7 +19,7 @@ const GalleryItem = ({item, onVoteUp, onVoteDown, onToggleFavourite}: GalleryIte
     if (!item)
         return <div>Gallery item cannot be empty</div>
     return (
-        <li className="relative">
+        <li className="relative" data-testid={`item_${item.id}`}>
             <div
                 className="ring-2 ring-offset-2 ring-indigo-500 group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-200 overflow-hidden">
                 <img src={`${item.url}`} alt={''} className="object-cover pointer-events-none"/>
