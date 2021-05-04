@@ -7,13 +7,16 @@ interface GalleryItemProps {
     onToggleFavourite: (id: string, subId: string) => void
 }
 
+export enum GalleryItemScoreStyle {
+    positive = 'ml-4 bg-green-200 font-semibold rounded-full h-6 w-6 flex  items-center justify-center text-green-800 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500',
+    negative = 'ml-4 bg-red-200 font-semibold rounded-full h-6 w-6 flex  items-center justify-center text-red-800 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500'
+}
+
 const GalleryItem = ({item, onVoteUp, onVoteDown, onToggleFavourite}: GalleryItemProps) => {
 
-    const score = (item.score) ? item.score.up - item.score.down : 0;
-    const negativeScoreStyle = 'ml-4 bg-red-200 font-semibold rounded-full h-6 w-6 flex  items-center justify-center text-red-800 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500'
-    const positiveScoreStyle = 'ml-4 bg-green-200 font-semibold rounded-full h-6 w-6 flex  items-center justify-center text-green-800 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500'
+    const score = (item?.score) ? item.score.up - item.score.down : 0;
 
-    if(!item)
+    if (!item)
         return <div>Gallery item cannot be empty</div>
     return (
         <li className="relative">
@@ -24,6 +27,7 @@ const GalleryItem = ({item, onVoteUp, onVoteDown, onToggleFavourite}: GalleryIte
             </div>
             <div className={'mt-2 flex justify-center'}>
                 <button type="button"
+                        data-testid={'favourite-toggle'}
                         onClick={() => onToggleFavourite(item.id, item.sub_id)}
                         className="ml-4 bg-white rounded-full h-6 w-6 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     {
@@ -43,6 +47,7 @@ const GalleryItem = ({item, onVoteUp, onVoteDown, onToggleFavourite}: GalleryIte
                     <span className="sr-only">Favorite</span>
                 </button>
                 <button type="button"
+                        data-testid={'vote-up'}
                         onClick={() => onVoteUp(item.id)}
                         className="ml-4 bg-white rounded-full h-6 w-6 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
 
@@ -55,6 +60,7 @@ const GalleryItem = ({item, onVoteUp, onVoteDown, onToggleFavourite}: GalleryIte
                 </button>
 
                 <button type="button"
+                        data-testid={'vote-down'}
                         onClick={() => onVoteDown(item.id)}
                         className="ml-4 bg-white rounded-full h-6 w-6 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -66,7 +72,9 @@ const GalleryItem = ({item, onVoteUp, onVoteDown, onToggleFavourite}: GalleryIte
                 </button>
                 {
                     (score != 0) ? <div
-                        className={(score > 0) ? positiveScoreStyle : negativeScoreStyle}>
+                        data-testid={(score > 0) ? 'positive_score' : 'negative_score'
+                        }
+                        className={(score > 0) ? GalleryItemScoreStyle.positive : GalleryItemScoreStyle.negative}>
                         {score}
                     </div> : undefined
                 }
